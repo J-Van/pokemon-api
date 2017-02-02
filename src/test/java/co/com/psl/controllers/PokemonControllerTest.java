@@ -29,7 +29,7 @@ public class PokemonControllerTest {
     public void getAllPokemon() throws Exception {
         mockMvc.perform(get("/pokemon"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(3)))
+                .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0].id").exists())
                 .andExpect(jsonPath("$[0].name").exists())
                 .andExpect(jsonPath("$[0].type").exists())
@@ -41,11 +41,12 @@ public class PokemonControllerTest {
 
     @Test
     public void getPokemonByName() throws Exception {
-        mockMvc.perform(get("/pokemon?name=ika"))
+        mockMvc.perform(get("/pokemon").param("name", "ika"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].id").value(1))
-                .andExpect(jsonPath("$[0].name").value("pikachu"));
+                .andExpect(jsonPath("$[0].id").value("1"))
+                .andExpect(jsonPath("$[0].name").value("Pikachu")
+                );
     }
 
     @Test
@@ -53,8 +54,19 @@ public class PokemonControllerTest {
         mockMvc.perform(get("/pokemon/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].id").value(1))
-                .andExpect(jsonPath("$[0].name").value("pikachu"));
+                .andExpect(jsonPath("$[0].id").value("1"))
+                .andExpect(jsonPath("$[0].name").value("Pikachu")
+                );
+    }
+
+    @Test
+    public void getAllTypes() throws Exception {
+        mockMvc.perform(get("/pokemon/types"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(9)))
+                .andExpect(jsonPath("$[0].id").exists())
+                .andExpect(jsonPath("$[0].name").exists()
+                );
     }
 
 }
