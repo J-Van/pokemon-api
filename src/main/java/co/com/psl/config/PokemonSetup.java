@@ -15,8 +15,8 @@ import java.util.List;
 @Component
 public class PokemonSetup {
 
-    private ArrayList<Type> existingTypes = new ArrayList<>();
-    private ArrayList<Pokemon> existingPokemon = new ArrayList<>();
+    private List<Type> existingTypes = new ArrayList<>();
+    private List<Pokemon> existingPokemon = new ArrayList<>();
 
     @PostConstruct
     public void pokemonSetup() {
@@ -48,7 +48,7 @@ public class PokemonSetup {
         existingPokemon.add(new Pokemon("2", "Bulbasaur", bulbasaurTypes, bulbasaurWeaknesses, null, "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png"));
     }
 
-    public ArrayList<Type> getExistingTypes() {
+    public List<Type> getExistingTypes() {
         return existingTypes;
     }
 
@@ -56,7 +56,7 @@ public class PokemonSetup {
         this.existingTypes = existingTypes;
     }
 
-    public ArrayList<Pokemon> getExistingPokemon() {
+    public List<Pokemon> getExistingPokemon() {
         return existingPokemon;
     }
 
