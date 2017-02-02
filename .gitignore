@@ -1,4 +1,7 @@
 target
 .idea/
-Pokemon.iml
+*.class
+*.jar
+*.war
+*.ear
 

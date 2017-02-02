@@ -14,6 +14,8 @@ public class PokemonController {
 
 //    @RequestMapping(value = "/pokemon", method = RequestMethod.GET)
 //    public List<Pokemon> getAllPokemon(@RequestParam(value = "name", required = false) String name) {
-//
+//        if (name == null || name.isEmpty()) {
+//            return getAllAvailablePokemon();
+//        }
 //    }
 }
