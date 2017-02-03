@@ -1,11 +1,8 @@
-package co.com.psl.dto;
+package co.com.psl.repository;
 
 import java.util.List;
 
-/**
- * Created by jvanegasp on 2/02/2017.
- */
-public class PokemonDTO {
+public class PokemonDto {
 
     private String id;
     private String name;
@@ -14,7 +11,7 @@ public class PokemonDTO {
     private String evolutionId;
     private String image;
 
-    public PokemonDTO(String id, String name, List<String> type, List<String> weakness, String evolutionId, String image) {
+    public PokemonDto(String id, String name, List<String> type, List<String> weakness, String evolutionId, String image) {
         this.id = id;
         this.name = name;
         this.type = type;

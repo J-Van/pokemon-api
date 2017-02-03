@@ -1,4 +1,4 @@
-package co.com.psl.controllers;
+package co.com.psl.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,10 +12,6 @@ import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-/**
- * Created by jvanegasp on 1/02/2017.
- */
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
