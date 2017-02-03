@@ -13,10 +13,10 @@ public class Pokemon {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany
+    @ManyToMany
     private List<Type> type;
 
-    @OneToMany
+    @ManyToMany
     private List<Type> weakness;
 
     @OneToOne
@@ -27,8 +27,7 @@ public class Pokemon {
 
     protected Pokemon() {}
 
-    public Pokemon(Long id, String name, List<Type> type, List<Type> weakness, Pokemon evolution, String image) {
-        this.id = id;
+    public Pokemon(String name, List<Type> type, List<Type> weakness, Pokemon evolution, String image) {
         this.name = name;
         this.type = type;
         this.weakness = weakness;
