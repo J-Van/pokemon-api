@@ -1,12 +1,18 @@
-package co.com.psl.models;
+package co.com.psl.model;
 
-/**
- * Created by jvanegasp on 1/02/2017.
- */
+import javax.persistence.*;
+
+@Entity
 public class Type {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(nullable = false)
     private String name;
+
+    protected Type() {}
 
     public Type(Long id, String name) {
         this.id = id;
