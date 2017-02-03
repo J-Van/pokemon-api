@@ -38,7 +38,7 @@ public class PokemonInit {
         pikachuTypes.add(typeRepository.findById(7L));
         List<Type> pikachuWeaknesses = new ArrayList<>();
         pikachuWeaknesses.add(typeRepository.findById(4L));
-        pokemonRepository.save(new Pokemon(1L, "Pikachu", pikachuTypes, pikachuWeaknesses, null, "http://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png"));
+        Pokemon pikachu = new Pokemon(1L, "Pikachu", pikachuTypes, pikachuWeaknesses, null, "http://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png");
 
         List<Type> bulbasaurTypes = new ArrayList<>();
         bulbasaurTypes.add(typeRepository.findById(6L));
@@ -48,7 +48,11 @@ public class PokemonInit {
         bulbasaurWeaknesses.add(typeRepository.findById(9L));
         bulbasaurWeaknesses.add(typeRepository.findById(2L));
         bulbasaurWeaknesses.add(typeRepository.findById(8L));
-        pokemonRepository.save(new Pokemon(2L, "Bulbasaur", bulbasaurTypes, bulbasaurWeaknesses, null, "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png"));
+        Pokemon bulbasaur = new Pokemon(2L, "Bulbasaur", bulbasaurTypes, bulbasaurWeaknesses, null, "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png");
+        Pokemon raichu = new Pokemon(3L, "Raichu", pikachuTypes, pikachuWeaknesses, null, "http://cdn.bulbagarden.net/upload/8/88/026Raichu.png");
+        pokemonRepository.save(pikachu);
+        pokemonRepository.save(bulbasaur);
+        pokemonRepository.save(raichu);
         pokemonRepository.flush();
     }
 }
