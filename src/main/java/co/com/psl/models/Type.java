@@ -5,17 +5,17 @@ package co.com.psl.models;
  */
 public class Type {
 
-    private String id;
+    private Long id;
     private String name;
 
-    public Type(String id, String name) {
+    public Type(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() { return id; }
+    public Long getId() { return id; }
 
-    public void setId(String id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
 

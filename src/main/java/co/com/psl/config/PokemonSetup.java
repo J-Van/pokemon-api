@@ -21,21 +21,21 @@ public class PokemonSetup {
     @PostConstruct
     public void pokemonSetup() {
         System.out.println("Setup Pokemon");
-        existingTypes.add(new Type("1", "normal"));
-        existingTypes.add(new Type("2", "flying"));
-        existingTypes.add(new Type("3", "poison"));
-        existingTypes.add(new Type("4", "ground"));
-        existingTypes.add(new Type("5", "fire"));
-        existingTypes.add(new Type("6", "grass"));
-        existingTypes.add(new Type("7", "electric"));
-        existingTypes.add(new Type("8", "psychic"));
-        existingTypes.add(new Type("9", "ice"));
+        existingTypes.add(new Type(1L, "normal"));
+        existingTypes.add(new Type(2L, "flying"));
+        existingTypes.add(new Type(3L, "poison"));
+        existingTypes.add(new Type(4L, "ground"));
+        existingTypes.add(new Type(5L, "fire"));
+        existingTypes.add(new Type(6L, "grass"));
+        existingTypes.add(new Type(7L, "electric"));
+        existingTypes.add(new Type(8L, "psychic"));
+        existingTypes.add(new Type(9L, "ice"));
 
         List<Type> pikachuTypes = new ArrayList<>();
         pikachuTypes.add(existingTypes.get(6));
         List<Type> pikachuWeaknesses = new ArrayList<>();
         pikachuWeaknesses.add(existingTypes.get(3));
-        existingPokemon.add(new Pokemon("1", "Pikachu", pikachuTypes, pikachuWeaknesses, "3", "http://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png"));
+        existingPokemon.add(new Pokemon(1L, "Pikachu", pikachuTypes, pikachuWeaknesses, 3L, "http://cdn.bulbagarden.net/upload/0/0d/025Pikachu.png"));
 
         List<Type> bulbasaurTypes = new ArrayList<>();
         bulbasaurTypes.add(existingTypes.get(5));
@@ -45,7 +45,7 @@ public class PokemonSetup {
         bulbasaurWeaknesses.add(existingTypes.get(8));
         bulbasaurWeaknesses.add(existingTypes.get(1));
         bulbasaurWeaknesses.add(existingTypes.get(7));
-        existingPokemon.add(new Pokemon("2", "Bulbasaur", bulbasaurTypes, bulbasaurWeaknesses, null, "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png"));
+        existingPokemon.add(new Pokemon(2L, "Bulbasaur", bulbasaurTypes, bulbasaurWeaknesses, 0L, "http://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png"));
     }
 
     public List<Type> getExistingTypes() {

@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Pokemon {
 
-    private String id;
+    private Long id;
     private String name;
     private List<Type> type;
     private List<Type> weakness;
-    private String evolutionId;
+    private Long evolutionId;
     private String image;
 
-    public Pokemon(String id, String name, List<Type> type, List<Type> weakness, String evolutionId, String image) {
+    public Pokemon(Long id, String name, List<Type> type, List<Type> weakness, Long evolutionId, String image) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -24,7 +24,7 @@ public class Pokemon {
         this.image = image;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class Pokemon {
         return weakness;
     }
 
-    public String getEvolutionId() {
+    public Long getEvolutionId() {
         return evolutionId;
     }
 
@@ -46,7 +46,7 @@ public class Pokemon {
         return image;
     }
 
-    public void setId(String id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
 
     public void setName(String name) { this.name = name; }
 
@@ -54,7 +54,7 @@ public class Pokemon {
 
     public void setWeakness(List<Type> weakness) { this.weakness = weakness; }
 
-    public void setEvolutionId(String evolutionId) { this.evolutionId = evolutionId; }
+    public void setEvolutionId(Long evolutionId) { this.evolutionId = evolutionId; }
 
     public void setImage(String image) { this.image = image; }
 }
