@@ -1,4 +1,4 @@
-package co.com.psl.model;
+package co.com.psl.domain;
 
 import javax.persistence.*;
 
@@ -12,7 +12,8 @@ public class Type {
     @Column(nullable = false)
     private String name;
 
-    protected Type() {}
+    protected Type() {
+    }
 
     public Type(Long id, String name) {
         this.id = id;
@@ -23,11 +24,19 @@ public class Type {
         this.name = name;
     }
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 }

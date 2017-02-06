@@ -1,6 +1,6 @@
 package co.com.psl.repository;
 
-import co.com.psl.model.Pokemon;
+import co.com.psl.domain.Pokemon;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

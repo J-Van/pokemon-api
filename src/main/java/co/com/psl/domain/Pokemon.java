@@ -1,4 +1,4 @@
-package co.com.psl.model;
+package co.com.psl.domain;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,7 +25,8 @@ public class Pokemon {
     @Column(nullable = false)
     private String image;
 
-    protected Pokemon() {}
+    protected Pokemon() {
+    }
 
     public Pokemon(String name, List<Type> type, List<Type> weakness, Pokemon evolution, String image) {
         this.name = name;
@@ -43,7 +44,9 @@ public class Pokemon {
         return name;
     }
 
-    public List<Type> getType() { return type; }
+    public List<Type> getType() {
+        return type;
+    }
 
     public List<Type> getWeakness() {
         return weakness;
@@ -57,15 +60,27 @@ public class Pokemon {
         return image;
     }
 
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public void setType(List<Type> type) { this.type = type; }
+    public void setType(List<Type> type) {
+        this.type = type;
+    }
 
-    public void setWeakness(List<Type> weakness) { this.weakness = weakness; }
+    public void setWeakness(List<Type> weakness) {
+        this.weakness = weakness;
+    }
 
-    public void setEvolution(Pokemon evolution) { this.evolution = evolution; }
+    public void setEvolution(Pokemon evolution) {
+        this.evolution = evolution;
+    }
 
-    public void setImage(String image) { this.image = image; }
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

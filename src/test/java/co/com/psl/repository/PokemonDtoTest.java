@@ -1,7 +1,7 @@
 package co.com.psl.repository;
 
-import co.com.psl.model.Pokemon;
-import co.com.psl.model.Type;
+import co.com.psl.domain.Pokemon;
+import co.com.psl.domain.Type;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +16,8 @@ public class PokemonDtoTest {
     @Autowired
     private PokemonRepository pokemonRepository;
 
-    @Autowired TypeRepository typeRepository;
+    @Autowired
+    private TypeRepository typeRepository;
 
     @Test
     public void typeRepositoryShouldPersistType() {

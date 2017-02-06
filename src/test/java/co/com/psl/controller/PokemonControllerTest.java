@@ -1,5 +1,6 @@
 package co.com.psl.controller;
 
+import co.com.psl.repository.PokemonRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,14 @@ public class PokemonControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private PokemonRepository pokemonRepository;
+
     @Test
     public void getAllPokemon() throws Exception {
         mockMvc.perform(get("/pokemon"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].id").exists())
                 .andExpect(jsonPath("$[0].name").exists())
                 .andExpect(jsonPath("$[0].type").exists())
@@ -59,9 +63,9 @@ public class PokemonControllerTest {
     public void getSinglePokemon() throws Exception {
         mockMvc.perform(get("/pokemon/1"))
                 .andExpect(status().isOk())
-                        .andExpect(jsonPath("$").exists())
-                        .andExpect(jsonPath("$.id").value("1"))
-                        .andExpect(jsonPath("$.name").value("Pikachu")
+                .andExpect(jsonPath("$").exists())
+                .andExpect(jsonPath("$.id").value("1"))
+                .andExpect(jsonPath("$.name").value("Pikachu")
                 );
     }
 
@@ -76,7 +80,7 @@ public class PokemonControllerTest {
     public void getAllTypes() throws Exception {
         mockMvc.perform(get("/pokemon/types"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(9)))
+                .andExpect(jsonPath("$", hasSize(18)))
                 .andExpect(jsonPath("$[0].id").exists())
                 .andExpect(jsonPath("$[0].name").exists()
                 );
@@ -87,7 +91,7 @@ public class PokemonControllerTest {
         mockMvc.perform(get("/pokemon/types").param("name", "ic"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$[0].id").value("7"))
+                .andExpect(jsonPath("$[0].id").value("13"))
                 .andExpect(jsonPath("$[0].name").value("electric")
                 );
     }
@@ -97,7 +101,7 @@ public class PokemonControllerTest {
         mockMvc.perform(get("/pokemon/types").param("name", "sych"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].id").value("8"))
+                .andExpect(jsonPath("$[0].id").value("14"))
                 .andExpect(jsonPath("$[0].name").value("psychic")
                 );
     }

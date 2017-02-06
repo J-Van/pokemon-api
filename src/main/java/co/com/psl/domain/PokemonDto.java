@@ -1,6 +1,7 @@
-package co.com.psl.repository;
+package co.com.psl.domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class PokemonDto {
 
@@ -18,6 +19,23 @@ public class PokemonDto {
         this.weakness = weakness;
         this.evolutionId = evolutionId;
         this.image = image;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof PokemonDto)) return false;
+        PokemonDto other = (PokemonDto) obj;
+        if (!Objects.equals(this.getId(), other.getId())) return false;
+        if (!Objects.equals(this.getName(), other.getName())) return false;
+        if (!Objects.equals(this.getEvolutionId(), other.getEvolutionId())) return false;
+        if (!Objects.equals(this.getImage(), other.getImage())) return false;
+        for (int i = 0; i < this.getType().size(); i++) {
+            if (!Objects.equals(this.getType().get(i), other.getType().get(i))) return false;
+        }
+        for (int i = 0; i < this.getWeakness().size(); i++) {
+            if (!Objects.equals(this.getWeakness().get(i), other.getWeakness().get(i))) return false;
+        }
+        return true;
     }
 
     public String getId() {
